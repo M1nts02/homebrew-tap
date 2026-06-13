@@ -12,18 +12,9 @@ class Minttab < Formula
   end
 
   def post_install
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "Accessibility"],
-                   print_stderr: false,
-                   must_succeed: false
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "ScreenCapture"],
-                   print_stderr: false,
-                   must_succeed: false
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "PostEvent"],
-                   print_stderr: false,
-                   must_succeed: false
+    ["Accessibility", "ScreenCapture", "PostEvent"].each do |service|
+      quiet_system "/usr/bin/tccutil", "reset", service
+    end
   end
 
   service do
@@ -52,3 +43,4 @@ class Minttab < Formula
     assert_match "MintTab", shell_output("#{bin}/minttab --help 2>&1 || true")
   end
 end
+
