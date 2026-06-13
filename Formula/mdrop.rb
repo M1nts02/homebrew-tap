@@ -1,8 +1,8 @@
 class Mdrop < Formula
   desc "Lightweight macOS file drop utility"
   homepage "https://github.com/M1nts02/mDrop"
-  url "https://github.com/M1nts02/mDrop/releases/download/v0.0.1/mDrop-v0.0.1-macos-universal.zip"
-  sha256 "b2c3c7a8973f16527c7ae59b3817ce8c880ad6fd9b69c35c38c6f1bca912f803"
+  url "https://github.com/M1nts02/mDrop/releases/download/v0.0.2/mdrop-v0.0.2-macos-universal.zip"
+  sha256 "095f57eb03aa2d6e82d2627b3d7db90e23188b01a2e5eba1473bf24ec13777b9"
   license "MIT"
 
   def install
