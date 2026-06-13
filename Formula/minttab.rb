@@ -11,22 +11,7 @@ class Minttab < Formula
     bin.install "minttab"
   end
 
-  post_install do
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "Accessibility"],
-                   print_stderr: false,
-                   must_succeed: false
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "ScreenCapture"],
-                   print_stderr: false,
-                   must_succeed: false
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "PostEvent"],
-                   print_stderr: false,
-                   must_succeed: false
-  end
-
-  uninstall_postflight do
+  def post_install
     system_command "/usr/bin/tccutil",
                    args:         ["reset", "Accessibility"],
                    print_stderr: false,
@@ -54,8 +39,12 @@ class Minttab < Formula
   def caveats
     <<~EOS
       MintTab requires Accessibility, Screen Recording and Input Monitoring permissions.
-      After install, upgrade, or uninstall, these system permissions are reset
-      and must be re-granted in System Settings > Privacy & Security.
+      After install or upgrade, these system permissions are reset automatically.
+      On uninstall, please run:
+        tccutil reset Accessibility
+        tccutil reset ScreenCapture
+        tccutil reset PostEvent
+      Then re-grant the permissions in System Settings > Privacy & Security.
     EOS
   end
 
