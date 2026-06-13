@@ -9,24 +9,21 @@ class Mdrop < Formula
     bin.install "mdrop"
   end
 
-  def post_install
-    system "/usr/bin/tccutil", "reset", "Accessibility"
-    system "/usr/bin/tccutil", "reset", "ScreenCapture"
-  end
-
   def caveats
     <<~EOS
       mDrop may require Accessibility and Screen Recording permissions.
-      After install or upgrade, these system permissions are reset automatically.
-      On uninstall, please run:
+      Homebrew's sandbox prevents these permissions from being reset
+      automatically, so after install or upgrade please run:
         tccutil reset Accessibility
         tccutil reset ScreenCapture
       Then re-grant the permissions in System Settings > Privacy & Security.
+      Run the same commands on uninstall before removing the app.
     EOS
   end
 
   test do
-    system "false"
+    system "#{bin}/mdrop", "--help"
   end
 end
+
 
