@@ -1,8 +1,8 @@
 class Minttab < Formula
   desc "macOS window switcher with group support"
   homepage "https://github.com/M1nts02/MintTab"
-  url "https://github.com/M1nts02/MintTab/releases/download/v0.0.3/MintTab-v0.0.3-macos-arm64.zip"
-  sha256 "44031e602cd4d37d53ad56a9bdbbfb2f4e955b75436fc61dca3b7ae8938b20cd"
+  url "https://github.com/M1nts02/MintTab/releases/download/v0.0.4/MintTab-v0.0.4-macos-arm64.zip"
+  sha256 "ee8fea81126fe44ce7417486c4901f79dd10d681ab31a3fedda0d5a0b393f3aa"
   license "MIT"
 
   depends_on :macos => :ventura
