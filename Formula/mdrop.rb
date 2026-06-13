@@ -10,14 +10,8 @@ class Mdrop < Formula
   end
 
   def post_install
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "Accessibility"],
-                   print_stderr: false,
-                   must_succeed: false
-    system_command "/usr/bin/tccutil",
-                   args:         ["reset", "ScreenCapture"],
-                   print_stderr: false,
-                   must_succeed: false
+    system "/usr/bin/tccutil", "reset", "Accessibility"
+    system "/usr/bin/tccutil", "reset", "ScreenCapture"
   end
 
   def caveats
@@ -35,3 +29,4 @@ class Mdrop < Formula
     system "false"
   end
 end
+
