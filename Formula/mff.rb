@@ -1,8 +1,8 @@
 class Mff < Formula
   desc "GUI fuzzy finder (Spotlight-style) for files and stdin"
   homepage "https://github.com/M1nts02/mff"
-  url "https://github.com/M1nts02/mff/releases/download/v0.0.6/mff-0.0.6-macosx-universal.zip"
-  sha256 "e21f1b1fb6034e0c69c663ce67479b48309e451b2eeffa76414c75692cf3c41c"
+  url "https://github.com/M1nts02/mff/releases/download/v0.0.7/mff-0.0.7-macosx-universal.zip"
+  sha256 "c2de5f740d2369655457b94cd80407180a4a65b33079ecc08d15e8e79960c452"
   license "MIT"
 
   def install
